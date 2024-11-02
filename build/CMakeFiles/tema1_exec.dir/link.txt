@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tema1_exec.dir/phoneMain.cpp.o -o tema1_exec 
