@@ -26,12 +26,14 @@ class Phone
         
         ~Phone() //destructor
         {
+           delete[] name, year;
            cout << "The phone object was deleted!" << endl;
         }
 
         Phone(const Phone &phone) //Copy constructor
         {
            this -> name = new char[BUFFER_SIZE];
+           this -> year = new int;
            strcpy(this -> name, phone.name);
            this -> year = phone.year;
            this -> price = phone.price;
