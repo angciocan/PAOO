@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tema2_exec.dir/Clock.cpp.o -o tema2_exec 
