@@ -1,0 +1,3 @@
+/home/marian-angelo/Documents/Tema3/build/CMakeFiles/tema3_exec.dir
+/home/marian-angelo/Documents/Tema3/build/CMakeFiles/edit_cache.dir
+/home/marian-angelo/Documents/Tema3/build/CMakeFiles/rebuild_cache.dir
