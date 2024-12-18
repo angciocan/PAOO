@@ -38,9 +38,9 @@ class Faculty
             cout << "The copy constructor was called!" << endl;
         }
           
-        Faculty operator = (const Faculty& faculty)
+        Faculty& operator = (const Faculty& faculty)
         {
-            if(this == &faculty)
+            if(this != &faculty)
             {
                 this -> facultyId = faculty.facultyId;
                 this -> facultyName = faculty.facultyName;
@@ -50,6 +50,38 @@ class Faculty
             }
 
             return *this;
+        }
+
+        void setFacultyId(const int facultyId)
+        {
+            if(this -> facultyId != facultyId)
+            {
+              this -> facultyId = facultyId;
+            }
+        }
+
+        void setFacultyName(const string facultyName)
+        {
+            if(this -> facultyName != facultyName)
+            {
+                this -> facultyName = facultyName;
+            }
+        }
+
+        void setNrStudents(const int nrStudents)
+        {
+            if(this -> nrStudents != nrStudents)
+            {
+               this -> nrStudents = nrStudents;
+            }
+        }
+
+        void setNrTeachers(const int nrTeachers)
+        {
+            if(this -> nrTeachers != nrTeachers)
+            {
+                this -> nrTeachers = nrTeachers;
+            }
         }
 
         void toString()
@@ -77,9 +109,15 @@ int main(void)
     shared_ptr<Faculty> fac2(new Faculty(1, "ETc", 2000, 800));
     fac2 -> toString();
     
-    fac2 = fac1;
+    fac2 = fac1; 
     fac2 -> toString();
     
+    Faculty faculty1(2, "Mecanica", 3000, 1200);
+    shared_ptr<Faculty> fac3(new Faculty(faculty1));
 
+    fac2 = fac3; //Item 14
+
+    fac2 -> toString(); // obiectul fac2 a copiat obiectul fac3, deci a copiat resursele obiectului fac3 
+    
     return 0;
 }
